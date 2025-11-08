@@ -7,3 +7,7 @@
 - Henrique Veras Cordeiro
 - Jordan Fernandes de Carvalho
 - Felipe Martins dos Santos Silva
+
+### APIs utilizadas:
+
+### Instruções de execução:
