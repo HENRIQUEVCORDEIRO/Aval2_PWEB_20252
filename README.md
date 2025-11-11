@@ -10,4 +10,6 @@
 
 ### APIs utilizadas:
 
+- OMDb API
+
 ### Instruções de execução:
