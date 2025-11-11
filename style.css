@@ -5,6 +5,7 @@
     --color-main-text: #FFFFFF;
     --color-secondary-text: #AAAAAA;
     --border-color:  #555555;
+    --error-color: #E50914;
 }
 
 * {
