@@ -7,7 +7,7 @@ export function renderMovies(list) {
       (movie) =>
         `<div class="movie-card">
         <img src="${
-          movie.Poster !== "N/A" ? movie.Poster : "assets/img/placehlder.jpg"
+          movie.Poster !== "N/A" ? movie.Poster : "assets/img/placeholder.jpg"
         }" alt="${movie.Title}">
         <h3>${movie.Title}</h3>
         <p>${movie.Year}</p>
