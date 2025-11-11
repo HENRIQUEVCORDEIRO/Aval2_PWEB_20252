@@ -7,6 +7,7 @@
 - Henrique Veras Cordeiro
 - Jordan Fernandes de Carvalho
 - Felipe Martins dos Santos Silva
+- Erick Vieira da Silva Costa
 
 ### APIs utilizadas:
 
