@@ -13,3 +13,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: var(--color-primary-background);
+    color: var(--color-main-text);
+    
+    line-height: 1.5;
+}
