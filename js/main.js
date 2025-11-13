@@ -19,3 +19,18 @@ async function initCatalog() {
 }
 
 document.addEventListener("DOMContentLoaded", initCatalog);
+
+async function testSearch() {
+  console.log("Testando busca na API...");
+  const result = await searchMovie("Casablanca");
+  console.log("Resultado da API:", result);
+
+  if (result && result.Search && result.Search.length > 0) {
+    const movie = result.Search[0];
+    console.log(`Primeiro resultado: ${movie.Title} (${movie.Year})`);
+  } else {
+    console.warn("NENHUM RESULTADO ENCONTRADO!");
+  }
+}
+
+testSearch();

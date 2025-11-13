@@ -1,13 +1,13 @@
 export function renderMovies(list) {
   const container = document.getElementById("movie-list");
-  if (!container) return;
+  if (!container) console.warn("Elemento não encontrado!");
 
   container.innerHTML = list
     .map(
       (movie) =>
         `<div class="movie-card">
         <img src="${
-          movie.Poster !== "N/A" ? movie.Poster : "assets/img/placeholder.jpg"
+          movie.Poster !== "N/A" ? movie.Poster : "assets/image_placeholder.jpg"
         }" alt="${movie.Title}">
         <h3>${movie.Title}</h3>
         <p>${movie.Year}</p>
@@ -19,12 +19,19 @@ export function renderMovies(list) {
     .join("");
 }
 
+const statusArea = document.getElementById("status-area");
+const listContainer = document.getElementById("grid-filmes");
+
 export function showError(message) {
-  const container = document.getElementById("movie-list");
-  container.innerHTML = `<p class="error">${message}</p>`;
+  statusArea.innerHTML = `<p class="error">${message}</p>`;
+  listContainer.innerHTML = "";
+  /*const container = document.getElementById("grid-filmes");
+  container.innerHTML = `<p class="error">${message}</p>`;*/
 }
 
 export function showLoading() {
-  const container = document.getElementById("movie-list");
-  container.innerHTML = `<p>Carregando...</p>`;
+  statusArea.innerHTML = "<p>Carregando...</p>";
+  listContainer.innerHTML = "";
+  /*const container = document.getElementById("grid-filmes");
+  container.innerHTML = `<p>Carregando...</p>`;*/
 }
