@@ -1,0 +1,22 @@
+:root {
+    --color-primary-background: #141414;
+    --color-secondary-background: #333333;
+
+    --color-main-text: #FFFFFF;
+    --color-secondary-text: #AAAAAA;
+    --border-color:  #555555;
+    --error-color: #E50914;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primary-background);
+    color: var(--color-main-text);
+    
+    line-height: 1.5;
+}

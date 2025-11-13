@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Interativo de Filmes e Séries</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+    
+  </div>
+    <main id="tela-inicial">
+
+       
+        <section id="destaque">
+            <div>
+                <h1>NOME DO FILME/SÉRIE</h1>
+                <p>sinopse sinopse sinopse sinopse sinopse sinopse</p>
+                <button>ASSISTA AGORA</button>
+            </div>
+           
+            <button>&lt;</button>
+            <button>&gt;</button>
+        </section>
+
+       
+        <nav id="navegacao-filtros">
+            <button class="nav-button">Filmes</button>
+            <button class="nav-button">Séries</button>
+            <button id="btn-categorias" class="nav-button">Categorias</button>
+            <a href="#tela-sobre" class="nav-button">Sobre</a>
+        </nav>
+
+
+        <section id="listagem-destaques">
+            <h2>Destaques</h2>
+            <div id="grid-filmes">
+               
+                <article class="card-titulo">
+                    <figure></figure>
+                    <div>
+                        <h3>Título da Obra</h3>
+                        <p>Filme/Série - Gênero - Ano</p>
+                    </div>
+                </article>
+
+                
+                <article class="card-titulo">
+                    <figure></figure>
+                    <div>
+                        <h3>Título da Obra</h3>
+                        <p>Filme/Série - Gênero - Ano</p>
+                    </div>
+                </article>
+
+                
+            </div>
+        </section>
+
+
+        <section id="sinopse">
+            <nav aria-label="Navegação de Página">
+                <button>Anterior</button>
+                <button disabled>1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>Próxima</button>
+            </nav>
+        </section>
+    </main>
+
+    
+    <div id="modal-erro" hidden>
+        <div>
+            <header>
+                <h2>ATENÇÃO!</h2>
+            </header>
+            <div>❌</div>
+            <p>Erro :(</p>
+            <p>Ocorreu um problema ao carregar os dados. Por favor, tente novamente.</p>
+            <button>OK</button>
+        </div>
+    </div>
+
+    
+    <div id="painel-categorias" hidden>
+        <button>Ação</button>
+        <button>Comédia</button>
+        <button>Romance</button>
+        <button>Terror</button>
+        <button>Suspense</button>
+        <button>Animação</button>
+        
+    </div>
+
+    
+    <section id="tela-detalhes-filme" hidden>
+        <header>
+            <div>
+                <h1>NOME DO FILME/SÉRIE</h1>
+                <button>ASSISTIR</button>
+            </div>
+        </header>
+
+        <div>
+            <p id="filme-sinopse">
+                sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse
+            </p>
+            
+            <div id="filme-rating">8.5</div>
+
+        </div>
+    </section>
+
+    
+    <section id="tela-detalhes-serie" hidden>
+        <header>
+            <div>
+                <h1>NOME DO FILME/SÉRIE</h1>
+                <button>ASSISTIR</button>
+            </div>
+        </header>
+
+        <div>
+            <p id="serie-sinopse">
+                sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse
+            </p>
+
+            <div id="serie-rating">4.3</div>
+
+            <div id="secao-temporadas">
+                <label for="seletor-temporada">Temporadas:</label>
+                <select id="seletor-temporada">
+                    <option value="1">Temporada 1</option>
+                    <option value="2">Temporada 2</option>
+                    <option value="3">Temporada 3</option>
+                </select>
+
+              
+                <div id="listagem-episodios">
+                    
+                    <article class="card-episodio">
+                        <figure></figure>
+                        <div>Episódio 1</div>
+                    </article>
+                    
+                    <article class="card-episodio">
+                        <figure></figure>
+                        <div>Episódio 2</div>
+                    </article>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
