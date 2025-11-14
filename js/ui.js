@@ -9,9 +9,9 @@ export function renderMovies(list) {
         <img src="${
           movie.Poster !== "N/A" ? movie.Poster : "assets/image_placeholder.jpg"
         }" alt="${movie.Title}">
-        <h3>${movie.Title}</h3>
-        <p>${movie.Year}</p>
-        <button onclick="window.location.href='detalhes.html?id=${
+        <h3 id="title">${movie.Title}</h3>
+        <p id="release-date">${movie.Year}</p>
+        <button id="details" onclick="window.location.href='detalhes.html?id=${
           movie.imdbID
         }'">Ver detalhes</button>
     </div>`

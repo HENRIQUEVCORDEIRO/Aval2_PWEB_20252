@@ -184,3 +184,11 @@ img {
 .info-cards {
     padding: 15px;
 }
+
+#title, #release-date {
+    padding-left: 50px;
+}
+
+#details {
+    margin-left: 50px;
+}
