@@ -100,8 +100,8 @@ body {
     border-radius: 20px;
     font-size: 20px;
     letter-spacing: 1px;
-    font-family:  Poppins, sans-serif,Arial; /* ← AQUI muda a fonte */
-    font-weight: 600; /* opcional */
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 600;
     cursor: pointer;
     border: none;
     transition: transform 0.15s ease, background 0.2s ease;
@@ -112,4 +112,39 @@ body {
     transform: scale(1.05);
     background: #6b6b6bdd;
 }
+
+
+#navegacao-filtros{
+    background: var(--color-primary-background);
+    padding-bottom: 10px;
+    padding-left: 65px;
+}
+
+.nav-button{
+
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 19px;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+    margin-top: 10px;
+
+}
+
+.nav-button:hover{
+    
+    transform: scale(1.05);
+    background: #6b6b6bdd;
+
+}
+
+/* #listagem-destaques{
+    padding-left: 65px;
+} */
 
