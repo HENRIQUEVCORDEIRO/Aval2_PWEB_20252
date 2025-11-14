@@ -85,7 +85,7 @@ body {
 
 #sinopse-filme{
     margin-top: 5px;
-    background: var(--color-secondary-background);
+    /* background: var(--color-secondary-background); */
     padding: 30px ;
     padding-right: 200px;
     border-radius: 10px;
