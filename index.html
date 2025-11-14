@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Interativo de Filmes e Séries</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,14 +19,14 @@
 
 
         <section id="destaque">
-            <div>
-                <h1>NOME DO FILME/SÉRIE</h1>
-                <p>sinopse sinopse sinopse sinopse sinopse sinopse</p>
-                <button>ASSISTA AGORA</button>
+            <div class="conteudo">
+                <h1 id="titulo-filme">NOME DO FILME/SÉRIE</h1>
+                <p id="sinopse-filme">sinopse sinopse sinopse sinopse sinopse sinopse</p>
+                <button class="btn-assista">ASSISTA AGORA</button>
             </div>
 
-            <button>&lt;</button>
-            <button>&gt;</button>
+            <button class="seta-esq">&lt;</button>
+            <button class="seta-dir">&gt;</button>
         </section>
 
 
@@ -43,7 +45,7 @@
 
                 <article class="card-titulo">
                     <figure></figure>
-                    <div>
+                    <div class="info-cards">
                         <h3>Título da Obra</h3>
                         <p>Filme/Série - Gênero - Ano</p>
                     </div>

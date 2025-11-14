@@ -1,11 +1,13 @@
 :root {
-    --color-primary-background: #141414;
-    --color-secondary-background: #333333;
+    --color-primary-background: #ececec; /*#141414*/
+    --color-secondary-background: #a3a3a3;/*#333333*/
 
-    --color-main-text: #FFFFFF;
-    --color-secondary-text: #AAAAAA;
-    --border-color:  #555555;
-    --error-color: #E50914;
+    --color-main-text: #000000;/*#FFFFFF*/
+    --color-secondary-text: #3d3d3d;/*#AAAAAA*/
+    --border-color:  #d4d4d4;/*#555555*/
+    --warn-color: #ffb86b;
+    --error-color: #E50914;/*#E50914*/
+    --radius-size: 14px;
 }
 
 * {
@@ -19,4 +21,163 @@ body {
     color: var(--color-main-text);
     
     line-height: 1.5;
+    font: 
+        16px/1.4 system-ui,
+        Roboto,
+        Segoi UI,
+        Ubuntu,
+        Catarell,
+        "Helvertica Neue",
+        Arial;
+}
+
+
+
+
+#destaque {
+    position: relative;
+    display: flex;
+    align-items: flex-end;   /* conteúdo fica embaixo */
+    justify-content: flex-start;
+    height: 300px;
+    padding: 20px;
+    overflow: hidden;        /* evita que as setas "vazem" se usar transform */
+    margin-bottom: 15px;
+}
+
+/* usar . (classe) — não # (id) */
+.seta-esq, .seta-dir {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background .18s ease, transform .12s ease;
+}
+
+/* posições das setas para trocar de filme*/
+.seta-esq { left: 12px; }
+.seta-dir { right: 12px; }
+
+/* hover/active */
+.seta-esq:hover, .seta-dir:hover { background: rgba(255,255,255,0.08); transform: translateY(-50%) scale(1.03); }
+.seta-esq:active, .seta-dir:active { transform: translateY(-50%) scale(0.98); }
+
+/* garante que o bloco de texto fique acima do fundo mas abaixo das setas, se quiser */
+#destaque .conteudo { z-index: 5; }
+
+.conteudo{
+    padding: 0 45px;
+}
+
+#titulo-filme{
+    margin-bottom: 5px;
+
+}
+
+#sinopse-filme{
+    margin-top: 5px;
+    /* background: var(--color-secondary-background); */
+    padding: 30px ;
+    padding-right: 200px;
+    border-radius: 10px;
+
+}
+
+
+.btn-assista{
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 19px;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-assista:hover {
+    transform: scale(1.05);
+    background: #6b6b6bdd;
+}
+
+
+#navegacao-filtros{
+    background: var(--color-primary-background);
+    padding-bottom: 10px;
+    padding-left: 65px;
+}
+
+.nav-button{
+
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 19px;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+    margin-top: 10px;
+
+}
+
+.nav-button:hover{
+    
+    transform: scale(1.05);
+    background: #6b6b6bdd;
+
+}
+
+/* #listagem-destaques{
+    padding-left: 65px;
+} */
+
+#grid-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card-titulo {
+    background-color: var(--color-secondary-background);
+    border-radius: var(--radius-size);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.card-titulo:hover {
+    transform: scale(1.05);
+}
+
+.card-titulo figure {
+    width: 100%;
+    height: 300px;
+    background-color: #ccc;
+}
+
+.card-titulo p {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+}
+
+.info-cards {
+    padding: 15px;
 }
