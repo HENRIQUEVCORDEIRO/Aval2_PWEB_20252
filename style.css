@@ -31,12 +31,6 @@ body {
         Arial;
 }
 
-img {
-    width: 90%;
-    padding: 0 0 0 50px;
-}
-
-
 #destaque {
     position: relative;
     display: flex;
@@ -186,9 +180,31 @@ img {
 }
 
 #title, #release-date {
-    padding-left: 50px;
+    margin-left: 50px;
 }
 
 #details {
     margin-left: 50px;
+    background: var(--color-main-text);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 15px;
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+    margin-top: 10px;
+}
+
+#details:hover {
+    transform: scale(1.05);
+    background: #6b6b6bdd;
+}
+
+#movie-image {
+    width: 90%;
+    margin: 0 0 0 50px;
+    border-radius: 15px;
 }

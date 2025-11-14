@@ -6,7 +6,7 @@ export function renderMovies(list) {
     .map(
       (movie) =>
         `<div class="movie-card">
-        <img src="${
+        <img id="movie-image"src="${
           movie.Poster !== "N/A" ? movie.Poster : "assets/image_placeholder.jpg"
         }" alt="${movie.Title}">
         <h3 id="title">${movie.Title}</h3>
