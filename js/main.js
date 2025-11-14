@@ -1,5 +1,5 @@
-import { searchMovie } from "./api";
-import { renderMovies, showError, showLoading } from "./ui";
+import { searchMovie } from "./api.js";
+import { renderMovies, showError, showLoading } from "./ui.js";
 
 async function initCatalog() {
   const query = "batman";

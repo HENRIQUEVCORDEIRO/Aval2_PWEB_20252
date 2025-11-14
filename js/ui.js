@@ -1,5 +1,5 @@
 export function renderMovies(list) {
-  const container = document.getElementById("movie-list");
+  const container = document.getElementById("grid-filmes");
   if (!container) console.warn("Elemento não encontrado!");
 
   container.innerHTML = list
