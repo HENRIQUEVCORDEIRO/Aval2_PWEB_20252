@@ -1,8 +1,7 @@
 import { searchMovie } from "./api.js";
 import { renderMovies, showError, showLoading } from "./ui.js";
 
-async function initCatalog() {
-  const query = "batman";
+async function performSearch(query) {
   showLoading();
 
   try {
@@ -18,7 +17,7 @@ async function initCatalog() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", initCatalog);
+document.addEventListener("DOMContentLoaded", performSearch);
 
 async function testSearch() {
   console.log("Testando busca na API...");
