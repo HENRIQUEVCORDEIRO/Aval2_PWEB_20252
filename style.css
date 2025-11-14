@@ -148,3 +148,36 @@ body {
     padding-left: 65px;
 } */
 
+#grid-filmes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card-titulo {
+    background-color: var(--color-secondary-background);
+    border-radius: var(--radius-size);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.card-titulo:hover {
+    transform: scale(1.05);
+}
+
+.card-titulo figure {
+    width: 100%;
+    height: 300px;
+    background-color: #ccc;
+}
+
+.card-titulo p {
+    font-size: 0.9rem;
+    color: var(--color-secondary-text);
+}
+
+.info-cards {
+    padding: 15px;
+}
