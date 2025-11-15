@@ -35,6 +35,8 @@
             <button class="nav-button">Séries</button>
             <button id="btn-categorias" class="nav-button">Categorias</button>
             <a href="#tela-sobre" class="nav-button">Sobre</a>
+            <input type="text" id="search-input" placeholder="Buscar filmes...">
+            <button id="search-btn">Buscar</button>
         </nav>
 
 
@@ -42,6 +44,7 @@
             <h2>Destaques</h2>
             <div id="status-area"></div>
             <div id="grid-filmes">
+
 
                 <article class="card-titulo">
                     <figure></figure>
@@ -59,9 +62,8 @@
                         <p>Filme/Série - Gênero - Ano</p>
                     </div>
                 </article>
-
-
             </div>
+            <div id="search-results"></div>
         </section>
 
 
@@ -143,52 +145,56 @@
                     <option value="2">Temporada 2</option>
                     <option value="3">Temporada 3</option>
                 </select>
-                
-<section id="screen-about" hidden>
-<h1>Sobre a Equipe</h1>
-    <div id="cards-team">
 
-        <article class="card-member2">
-                <figure>👤</figure>
-                <h3>Henrique Veras</h3>
-                <p>Desenvolvimento e implementação da lógica dinâmica e das funcionalidades do sistema por meio de JavaScript.</p>
-            </article>
+                <section id="screen-about" hidden>
+                    <h1>Sobre a Equipe</h1>
+                    <div id="cards-team">
 
-         <article class="card-member1">
-                <figure></figure>
-                <h3>Felipe Martins</h3>
-                <p>Atuação na equipe de CSS (em conjunto com Erik), focado na implementação inicial da estilização visual e formatação do layout.</p>
-            </article>
+                        <article class="card-member2">
+                            <figure>👤</figure>
+                            <h3>Henrique Veras</h3>
+                            <p>Desenvolvimento e implementação da lógica dinâmica e das funcionalidades do sistema por
+                                meio de JavaScript.</p>
+                        </article>
 
-            <article class="card-member3">
-                <figure>👤</figure>
-                <h3>Erik Vieira</h3>
-                <p>Atuação na equipe de CSS (em conjunto com Felipe), focado no refinamento da folha de estilos e na garantia da responsividade da interface.</p>
-            </article>
+                        <article class="card-member1">
+                            <figure></figure>
+                            <h3>Felipe Martins</h3>
+                            <p>Atuação na equipe de CSS (em conjunto com Erik), focado na implementação inicial da
+                                estilização visual e formatação do layout.</p>
+                        </article>
 
-            <article class="card-member4">
-                <figure>👤</figure>
-                <h3>Jordan Fernandes</h3>
-                <p>Responsável pela estruturação do website em HTML e pela concepção da experiência e interface do usuário (UI/UX).</p>
-            </article>
-            
+                        <article class="card-member3">
+                            <figure>👤</figure>
+                            <h3>Erik Vieira</h3>
+                            <p>Atuação na equipe de CSS (em conjunto com Felipe), focado no refinamento da folha de
+                                estilos e na garantia da responsividade da interface.</p>
+                        </article>
+
+                        <article class="card-member4">
+                            <figure>👤</figure>
+                            <h3>Jordan Fernandes</h3>
+                            <p>Responsável pela estruturação do website em HTML e pela concepção da experiência e
+                                interface do usuário (UI/UX).</p>
+                        </article>
 
 
-                <div id="listagem-episodios">
 
-                    <article class="card-episodio">
-                        <figure></figure>
-                        <div>Episódio 1</div>
-                    </article>
+                        <div id="listagem-episodios">
 
-                    <article class="card-episodio">
-                        <figure></figure>
-                        <div>Episódio 2</div>
-                    </article>
+                            <article class="card-episodio">
+                                <figure></figure>
+                                <div>Episódio 1</div>
+                            </article>
 
-                </div>
+                            <article class="card-episodio">
+                                <figure></figure>
+                                <div>Episódio 2</div>
+                            </article>
+
+                        </div>
+                    </div>
             </div>
-        </div>
     </section>
     <script type="module" src="./js/main.js"></script>
 
