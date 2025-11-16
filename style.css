@@ -34,15 +34,23 @@ body {
 
 
 
-#destaque {
+#featured {
     position: relative;
     display: flex;
     align-items: flex-end;   /* conteúdo fica embaixo */
     justify-content: flex-start;
     height: 300px;
     padding: 20px;
-    overflow: hidden;        /* evita que as setas "vazem" se usar transform */
+    overflow: hidden;
     margin-bottom: 15px;
+    background: var(--color-primary-background); /* fundo cinza da faixa grande */
+    border-radius: var(--radius-size);
+}
+
+/* conteúdo dentro do featured */
+#featured .conteudo { 
+    z-index: 5; 
+    padding: 0 45px;
 }
 
 /* usar . (classe) — não # (id) */
@@ -71,12 +79,7 @@ body {
 .seta-esq:hover, .seta-dir:hover { background: rgba(255,255,255,0.08); transform: translateY(-50%) scale(1.03); }
 .seta-esq:active, .seta-dir:active { transform: translateY(-50%) scale(0.98); }
 
-/* garante que o bloco de texto fique acima do fundo mas abaixo das setas, se quiser */
-#destaque .conteudo { z-index: 5; }
 
-.conteudo{
-    padding: 0 45px;
-}
 
 #titulo-filme{
     margin-bottom: 5px;
@@ -116,8 +119,11 @@ body {
 
 #navegacao-filtros{
     background: var(--color-primary-background);
-    padding-bottom: 10px;
-    padding-left: 65px;
+    padding: 10px 40px;  /* recuo igual ao main */
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start; /* alinhado à esquerda */
+    flex-wrap: wrap;
 }
 
 .nav-button{
@@ -147,6 +153,11 @@ body {
 /* #listagem-destaques{
     padding-left: 65px;
 } */
+
+#listagem-destaques {
+    padding-left: 40px;
+}
+
 
 #grid-filmes {
     display: grid;
@@ -180,4 +191,57 @@ body {
 
 .info-cards {
     padding: 15px;
+}
+
+
+
+/* ===== PAGINAÇÃO ===== */
+
+#sinopse {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* centraliza tudo */
+    width: 100%;
+}
+
+#sinopse nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#sinopse nav button,
+#sinopse nav span {
+    font-size: 16px;
+    padding: 8px 14px;
+}
+
+/* Botões */
+#sinopse nav button {
+    background: var(--color-main-text);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform .15s ease, background .2s ease;
+}
+
+/* Hover */
+#sinopse nav button:hover:not([disabled]) {
+    transform: scale(1.06);
+    background: #6b6b6bdd; /* igual aos outros botões, consistente */
+}
+
+/* Botão atual (disabled) */
+#sinopse nav button[disabled] {
+    background: var(--color-secondary-background);
+    color: var(--color-secondary-text);
+    cursor: default;
+    transform: none;
+}
+
+/* Os três pontinhos (...) */
+#sinopse nav span {
+    color: var(--color-secondary-text);
+    padding: 8px 0;
 }
