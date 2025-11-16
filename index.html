@@ -7,212 +7,193 @@
     <title>Catálogo Interativo de Filmes e Séries</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div id="container-search">
+        <form action="" method="GET" id="search-bar">
+            <input type="search" name="term" id="field-term" placeholder="Buscar filmes ou séries">
+            <button type="submit" id="search-button">🔎</button>
+        </form>
+    </div>
 
-    <body>
-            <div id="container-search">
-            <form action="" method="GET" id="search-bar">
-                <input type="search" name="term" id="search-input" placeholder="Buscar filmes ou séries">
-                <button type="submit" id="search-btn">🔎</button>
-            </form>
-               
+    <main id="carousel">
+        <section id="new-releases">
+            <div class="content">
+                <h1 id="movie-title"></h1>
+                <p id="movie-synopsis-main"></p>
+            </div>
+
+            <button class="left-arrow" id="main-prev">&lt;</button>
+            <button class="right-arrow" id="main-next">&gt;</button>
+        </section>
+
+        <nav id="navigation-filters">
+            <button class="nav-button">Filmes</button>
+            <button class="nav-button">Séries</button>
+            <button id="btn-categories" class="nav-button">Categorias</button>
+            <a href="screen-about" class="nav-button">Sobre</a>
+        </nav>
+
+        <section id="listing-featured">
+            <h2 id="section-title">Destaques</h2>
+            <div id="status-area"></div>
+            <div id="grid-filmes">
+
+
+                <article class="card-title">
+                    <figure></figure>
+                    <div class="info-cards">
+                        <h3></h3> <!-- título da obra -->
+                        <p></p> <!-- Colocar se é filme ou série, gênero e ano. -->
+                    </div>
+                    <a href="#" class="btn-details" data-id="[id-API]">Detalhes</a>
+                </article>
+
+                <article class="card-title">
+                    <figure></figure>
+                    <div class="info-cards">
+                        <h3></h3> <!-- título da obra -->
+                        <p></p> <!-- Colocar se é filme ou série, gênero e ano. -->
+                    </div>
+                    <a href="#" class="btn-details" date-id="[id-API]">Detalhes</a>
+                </article>
+
+            </div>
+
+            <button class="left-arrow" id="featured-prev">&lt;</button>
+            <button class="right-arrow" id="featured-next">&gt;</button>
+
+        </section>
+
+
+        <section id="sinopse">
+            <nav aria-label="Navegação de Página">
+                <button>Anterior</button>
+                <button disabled>1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>Próxima</button>
+            </nav>
+        </section>
+    </main>
+
+
+    <div id="modal-erro" hidden>
+        <div>
+            <header>
+                <h2>ATENÇÃO!</h2>
+            </header>
+            <div>❌</div>
+            <p>Erro :(</p>
+            <p>Ocorreu um problema ao carregar os dados. Por favor, tente novamente.</p>
+            <button>OK</button>
         </div>
+    </div>
 
-            <main id="carousel">
+    <div id="category-panel" hidden>
+        <button>Ação</button>
+        <button>Comédia</button>
+        <button>Romance</button>
+        <button>Terror</button>
+        <button>Suspense</button>
+        <button>Animação</button>
+        <button>Ficção</button>
+        <button>Musical</button>
+    </div>
 
+    <section id="movie-details" hidden>
+        <header>
             <div>
-
+                <h1></h1>
             </div>
-            <main id="carousel">
+        </header>
 
+        <div>
+            <p id="movie-synopsis"></p>
+            <div id="movie-rating">
+                <span id="rating-value-movie"></span>
+            </div>
+        </div>
+    </section>
 
-                <section id="featured">
-                    <div class="conteudo">
-                        <h1 id="titulo-filme">NOME DO FILME/SÉRIE</h1>
-                        <p id="sinopse-filme">sinopse sinopse sinopse sinopse sinopse sinopse</p>
-                    </div>
+    <section id="series-details" hidden>
+        <header>
+            <div>
+                <h1></h1>
+            </div>
+        </header>
 
-                    <button class="seta-esq">&lt;</button>
-                    <button class="seta-dir">&gt;</button>
-                </section>
+        <div>
+            <div id="series-synopsis">
+                <p></p>
+            </div>
 
+            <div id="series-rating">
+                <span id="rating-value-series"></span>
+            </div>
 
-                <nav id="navegacao-filtros">
-                    <button class="nav-button">Filmes</button>
-                    <button class="nav-button">Séries</button>
-                    <button id="btn-categorias" class="nav-button">Categorias</button>
-                    <a href="#tela-sobre" class="nav-button">Sobre</a>
-                    <!--<input type="text" id="search-input" placeholder="Buscar filmes...">
-                    <button id="search-btn">Buscar</button>-->
-                </nav>
+            <div id="seasons">
+                <label for="selector-seasons">Temporadas:</label>
+                <select id="selector-seasons">
+                    <option value="1">Temporada 1</option>
+                </select>
 
+                <div id="episode-listing-container">
+                    <article class="card-episode">
+                        <figure></figure>
+                        <div class="info-episode">
+                            <h4></h4> <!-- titulo -->
+                            <p></p> <!-- sinopse -->
+                        </div>
+                    </article>
 
-                <section id="listagem-destaques">
-                    <h2 id="section-title">Destaques</h2>
-                    <div id="status-area"></div>
-                    <div id="grid-filmes">
-
-
-                        <article class="card-titulo">
-                            <figure></figure>
-                            <div class="info-cards">
-                                <h3>Título da Obra</h3>
-                                <p>Filme/Série - Gênero - Ano</p>
-                            </div>
-                        </article>
-
-
-                        <article class="card-titulo">
-                            <figure></figure>
-                            <div>
-                                <h3>Título da Obra</h3>
-                                <p>Filme/Série - Gênero - Ano</p>
-                            </div>
-                        </article>
-                    </div>
-                    <!--<div id="search-results"></div>-->
-                </section>
-
-
-                <section id="sinopse">
-                    <nav aria-label="Navegação de Página">
-                        <button>Anterior</button>
-                        <button disabled>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <span>...</span>
-                        <button>Próxima</button>
-                    </nav>
-                </section>
-            </main>
-
-
-            <div id="modal-erro" hidden>
-                <div>
-                    <header>
-                        <h2>ATENÇÃO!</h2>
-                    </header>
-                    <div>❌</div>
-                    <p>Erro :(</p>
-                    <p>Ocorreu um problema ao carregar os dados. Por favor, tente novamente.</p>
-                    <button>OK</button>
                 </div>
             </div>
+        </div>
+    </section>
 
+    <section id="screen-about" hidden>
+        <h1>Sobre a Equipe</h1>
+        <div id="cards-team">
 
-            <div id="painel-categorias" hidden>
-                <button>Ação</button>
-                <button>Comédia</button>
-                <button>Romance</button>
-                <button>Terror</button>
-                <button>Suspense</button>
-                <button>Animação</button>
+            <article class="card-member">
+                <figure>👤</figure>
+                <h3>Henrique Veras</h3>
+                <p>Desenvolvimento e implementação da lógica dinâmica e das funcionalidades do sistema por meio de
+                    JavaScript.</p>
+            </article>
 
-            </div>
+            <article class="card-member">
+                <figure></figure>
+                <h3>Felipe Martins</h3>
+                <p>Atuação na equipe de CSS (em conjunto com Erik), focado na implementação inicial da estilização
+                    visual e formatação do layout.</p>
+            </article>
 
+            <article class="card-member">
+                <figure>👤</figure>
+                <h3>Erik Vieira</h3>
+                <p>Atuação na equipe de CSS (em conjunto com Felipe), focado no refinamento da folha de estilos e na
+                    garantia da responsividade da interface.</p>
+            </article>
 
-            <section id="tela-detalhes-filme" hidden>
-                <header>
-                    <div>
-                        <h1>NOME DO FILME/SÉRIE</h1>
-                        <button>ASSISTIR</button>
-                    </div>
-                </header>
+            <article class="card-member">
+                <figure>👤</figure>
+                <h3>Jordan Fernandes</h3>
+                <p>Responsável pela estruturação do website em HTML e pela concepção da experiência e interface do
+                    usuário (UI/UX).</p>
+            </article>
 
-                <div>
-                    <p id="filme-sinopse">
-                        sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse
-                    </p>
-
-                    <div id="filme-rating">8.5</div>
-
-                </div>
-            </section>
-
-
-            <section id="tela-detalhes-serie" hidden>
-                <header>
-                    <div>
-                        <h1>NOME DO FILME/SÉRIE</h1>
-                        <button>ASSISTIR</button>
-                    </div>
-                </header>
-
-                <div>
-                    <p id="serie-sinopse">
-                        sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse sinopse
-                    </p>
-
-                    <div id="serie-rating">4.3</div>
-
-                    <div id="secao-temporadas">
-                        <label for="seletor-temporada">Temporadas:</label>
-                        <select id="seletor-temporada">
-                            <option value="1">Temporada 1</option>
-                            <option value="2">Temporada 2</option>
-                            <option value="3">Temporada 3</option>
-                        </select>
-
-                        <section id="screen-about" hidden>
-                            <h1>Sobre a Equipe</h1>
-                            <div id="cards-team">
-
-                                <article class="card-member2">
-                                    <figure>👤</figure>
-                                    <h3>Henrique Veras</h3>
-                                    <p>Desenvolvimento e implementação da lógica dinâmica e das funcionalidades do
-                                        sistema por
-                                        meio de JavaScript.</p>
-                                </article>
-
-                                <article class="card-member1">
-                                    <figure></figure>
-                                    <h3>Felipe Martins</h3>
-                                    <p>Atuação na equipe de CSS (em conjunto com Erik), focado na implementação inicial
-                                        da
-                                        estilização visual e formatação do layout.</p>
-                                </article>
-
-                                <article class="card-member3">
-                                    <figure>👤</figure>
-                                    <h3>Erik Vieira</h3>
-                                    <p>Atuação na equipe de CSS (em conjunto com Felipe), focado no refinamento da folha
-                                        de
-                                        estilos e na garantia da responsividade da interface.</p>
-                                </article>
-
-                                <article class="card-member4">
-                                    <figure>👤</figure>
-                                    <h3>Jordan Fernandes</h3>
-                                    <p>Responsável pela estruturação do website em HTML e pela concepção da experiência
-                                        e
-                                        interface do usuário (UI/UX).</p>
-                                </article>
-
-
-
-                                <div id="listagem-episodios">
-
-                                    <article class="card-episodio">
-                                        <figure></figure>
-                                        <div>Episódio 1</div>
-                                    </article>
-
-                                    <article class="card-episodio">
-                                        <figure></figure>
-                                        <div>Episódio 2</div>
-                                    </article>
-
-                                </div>
-                            </div>
-                    </div>
-            </section>
-            <script type="module" src="./js/main.js"></script>
-
-    </body>
+        </div>
+    </section>
+    <footer>
+        <p>
+            Desenvolvido por: Henrique Veras, Felipe Martins, Jordan Fernandes e Erik Vieira.
+        </p>
+    </footer>
+</body>
 
 </html>
