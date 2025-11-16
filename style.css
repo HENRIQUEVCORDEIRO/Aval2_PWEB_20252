@@ -120,6 +120,7 @@ body {
     transition: transform 0.15s ease, background 0.2s ease;
     margin-top: 10px;
     text-decoration: none;
+}
 
 #movie-synopsis-main {
   margin-top: 5px;
