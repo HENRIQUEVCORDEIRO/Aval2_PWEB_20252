@@ -9,19 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body> <div id="container-search">
+
+<body>
+    <div id="container-search">
         <form action="" method="GET" id="search-bar">
             <input type="search" name="term" id="field-term" placeholder="Buscar filmes ou séries">
             <button type="submit" id="search-button">🔎</button>
         </form>
     </div>
 
-    <main id="carousel"> <section id="new-releases">
+    <main id="carousel">
+        <section id="new-releases">
             <div class="content">
-                <h1 id="movie-title"></h1> 
+                <h1 id="movie-title"></h1>
                 <p id="movie-synopsis-main"></p>
             </div>
-            
+
             <button class="left-arrow" id="main-prev">&lt;</button>
             <button class="right-arrow" id="main-next">&gt;</button>
         </section>
@@ -33,9 +36,11 @@
             <a href="screen-about.html" class="nav-button">Sobre</a> </nav>
 
         <section id="listing-featured">
-            <h2>Destaques</h2>
+            <h2 id="section-title">Destaques</h2>
+            <div id="status-area"></div>
             <div id="grid-filmes">
-                
+
+
                 <article class="card-title">
                     <figure></figure>
                     <div class="info-cards">
@@ -53,16 +58,29 @@
                     </div>
                     <a href="details.html" class="btn-details" data-id="[id-API]">Detalhes</a>
                 </article>
-                
+
             </div>
-            
+
             <button class="left-arrow" id="featured-prev">&lt;</button>
             <button class="right-arrow" id="featured-next">&gt;</button>
 
         </section>
 
-    </main> 
-    <div id="error-modal" hidden>
+
+        <section id="sinopse">
+            <nav aria-label="Navegação de Página">
+                <button>Anterior</button>
+                <button disabled>1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>Próxima</button>
+            </nav>
+        </section>
+    </main>
+
+
+    <div id="modal-erro" hidden>
         <div>
             <header>
                 <h2>ATENÇÃO!</h2>
@@ -94,5 +112,10 @@
             Erick Vieira.
         </p>
     </footer>
-    </body>
+
+    <script type="module" src="./js/main.js"></script>
+
+
+</body>
+
 </html>
