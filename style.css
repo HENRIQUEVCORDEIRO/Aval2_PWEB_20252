@@ -53,7 +53,7 @@ body {
     padding: 0 45px;
 }
 
-/* usar . (classe) — não # (id) */
+
 .seta-esq, .seta-dir {
     position: absolute;
     top: 50%;
@@ -245,3 +245,74 @@ body {
     color: var(--color-secondary-text);
     padding: 8px 0;
 }
+
+
+/* ===== MODAL DE ERRO ===== */
+
+#modal-erro {
+    position: fixed;                 /* fica fixo na tela */
+    top: 0;
+    left: 0;
+    width: 100vw;                    /* cobre a tela toda */
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);  /* fundo escuro transparente */
+    display: flex;
+    align-items: center;             /* centraliza vertical */
+    justify-content: center;         /* centraliza horizontal */
+    backdrop-filter: blur(4px);      /* blur bonito no fundo */
+    z-index: 9999;                   /* fica por cima de tudo */
+}
+
+/* o card do modal */
+#modal-erro > div {
+    background: white;
+    color: black;
+    padding: 30px;
+    width: 340px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* título */
+#modal-erro header h2 {
+    color: var(--error-color);
+    margin-bottom: 10px;
+}
+
+/* emoji ou ícone */
+#modal-erro header + div {
+    font-size: 48px;
+    margin: 10px 0;
+}
+
+/* parágrafos */
+#modal-erro p {
+    margin: 8px 0;
+    color: #333;
+}
+
+/* botão OK */
+#modal-erro button {
+    margin-top: 15px;
+    background: var(--error-color);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#modal-erro button:hover {
+    transform: scale(1.05);
+    background: #c50711;
+}
+
+
+#modal-erro[hidden] {
+    display: none !important;
+}
+
+
