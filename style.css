@@ -288,7 +288,7 @@ body {
   display: flex;
   align-items: center; /* centraliza vertical */
   justify-content: center; /* centraliza horizontal */
-  backdrop-filter: blur(4px); /* blur bonito no fundo */
+  /*backdrop-filter: blur(4px); /* blur bonito no fundo */
   z-index: 9999; /* fica por cima de tudo */
 }
 
