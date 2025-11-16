@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Details</title>
+    <title>Detalhes da Obra</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <section id="movie-details" hidden>
+    <section id="details-view" hidden> 
         <header>
             <div>
                 <h1></h1>
@@ -18,9 +18,17 @@
         <div>
             <p id="movie-synopsis"></p> 
             <div id="movie-rating">
-                <span id="rating-value-movie"></span>
+                <span id="rating-value"></span>
             </div>
-        </div>
+
+            <div id="seasons" hidden>
+                <label for="selector-seasons">Temporadas:</label>
+                <select id="selector-seasons">
+                    <option value="1">Temporada 1</option>
+                </select>
+            </div>
+            
+            </div>
     </section>
 
 </body>
