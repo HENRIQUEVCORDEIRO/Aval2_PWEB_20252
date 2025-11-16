@@ -358,3 +358,6 @@ body {
     position: relative; /* para pocisionar o painel ao lado do botão categoria*/
 }
 
+#painel-categorias[hidden] {
+    display: none !important;
+}
