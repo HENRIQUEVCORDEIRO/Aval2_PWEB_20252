@@ -143,6 +143,7 @@ body {
     border: none;
     transition: transform 0.15s ease, background 0.2s ease;
     margin-top: 10px;
+    text-decoration: none;
 
 }
 
