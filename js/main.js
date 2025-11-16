@@ -13,8 +13,11 @@ const featuredIDs = [
   "tt0245429" /*A Viagem de Chihiro*/,
 ];
 
+const sectionTitle = document.getElementById("section-title");
+
 async function loadFeaturedMovies() {
   showLoading("grid-filmes");
+  sectionTitle.textContent = "Destaques";
 
   try {
     const movies = [];
@@ -29,30 +32,38 @@ async function loadFeaturedMovies() {
   }
 }
 
+/*document.getElementById("search-bar").addEventListener("submit", (e) => {
+  e.preventDefault();
+});*/
+
 async function performSearch(query) {
-  showLoading("search-results");
+  showLoading("grid-filmes");
+  sectionTitle.textContent = "Resultados";
 
   try {
     const data = await searchMovie(query);
     if (data.Response === "True") {
-      renderMovies(data.Search, "search-results");
+      renderMovies(data.Search, "grid-filmes");
     } else {
-      showError("Nenhum resultado encontrado", "search-results");
+      showError("Nenhum resultado encontrado", "grid-filmes");
     }
   } catch (error) {
     console.error(error);
-    showError("Erro ao buscar filmes.", "search-results");
+    showError("Erro ao buscar filmes.", "grid-filmes");
   }
 }
 
 function setupSearchBar() {
   const input = document.getElementById("search-input");
   const btn = document.getElementById("search-btn");
+  const form = document.getElementById("search-bar");
 
-  if (!input || !btn) {
+  form.addEventListener("submit", (e) => e.preventDefault());
+
+  /*if (!input || !btn) {
     console.warn("Elementos de busca não encontrados no HTML");
     return;
-  }
+  }*/
 
   btn.addEventListener("click", () => {
     const query = input.value.trim();
@@ -63,6 +74,15 @@ function setupSearchBar() {
     if (e.key === "Enter") {
       const query = input.value.trim();
       if (query) performSearch(query);
+      if (query === "") loadFeaturedMovies();
+    }
+  });
+
+  input.addEventListener("input", () => {
+    const query = input.value.trim();
+    if (query === "") {
+      loadFeaturedMovies();
+      return;
     }
   });
 }
@@ -71,25 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadFeaturedMovies();
   setupSearchBar();
 });
-
-/*document.addEventListener("DOMContentLoaded", () => {
-  const input = document.getElementById("search-input");
-  const btn = document.getElementById("search-btn");
-
-  btn.addEventListener("click", () => {
-    const query = input.ariaValueMax.trim();
-    if (query) performSearch(query);
-  });
-
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const query = input.ariaValueMax.trim();
-      if (query) performSearch(query);
-    }
-  });
-
-  performSearch("a");
-});*/
 
 async function testSearch() {
   console.log("Testando busca na API...");
