@@ -13,6 +13,10 @@ const featuredIDs = [
   "tt0245429" /*A Viagem de Chihiro*/,
 ];
 
+let currentQuery = "";
+let currentPage = 1;
+let totalResults = 0;
+
 const sectionTitle = document.getElementById("section-title");
 
 async function loadFeaturedMovies() {
@@ -32,20 +36,21 @@ async function loadFeaturedMovies() {
   }
 }
 
-/*document.getElementById("search-bar").addEventListener("submit", (e) => {
-  e.preventDefault();
-});*/
-
-async function performSearch(query) {
+async function performSearch(query, page = 1) {
   showLoading("grid-filmes");
   sectionTitle.textContent = "Resultados";
 
+  currentQuery = query;
+  currentPage = page;
+
   try {
-    const data = await searchMovie(query);
+    const data = await searchMovie(query, page);
     if (data.Response === "True") {
+      totalResults = parseInt(data.totalResults);
       renderMovies(data.Search, "grid-filmes");
+      renderPagination();
     } else {
-      showError("Nenhum resultado encontrado", "grid-filmes");
+      showError(data.Error || "Nenhum resultado encontrado", "grid-filmes");
     }
   } catch (error) {
     console.error(error);
@@ -53,12 +58,67 @@ async function performSearch(query) {
   }
 }
 
+function renderPagination() {
+  let nav = document.querySelector("#sinopse nav");
+
+  if (!nav) {
+    console.warn("<nav> não encontrado. Criando automaticamente...");
+
+    const section = document.getElementById("sinopse");
+    if (!section) {
+      console.error("ERRO: <section id='sinopse'> NÃO existe no HTML.");
+      return;
+    }
+
+    nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "Navegação de Página");
+    section.appendChild(nav);
+  }
+
+  const totalPages = Math.ceil(totalResults / 10);
+
+  nav.innerHTML = `
+    <button id="btn-prev" ${
+      currentPage === 1 ? "disabled" : ""
+    }>Anterior</button>
+    <span>Página ${currentPage} / ${totalPages}</span>
+    <button id="btn-next" ${
+      currentPage === totalPages ? "disabled" : ""
+    }>Próxima</button>
+  `;
+
+  setTimeout(() => {
+    const prev = document.getElementById("btn-prev");
+    const next = document.getElementById("btn-next");
+
+    if (!prev || !next) {
+      console.error("Botões de paginação não foram criados.");
+      return;
+    }
+
+    prev.addEventListener("click", () => {
+      if (currentPage > 1) {
+        performSearch(currentQuery, currentPage - 1);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+
+    next.addEventListener("click", () => {
+      if (currentPage < totalPages) {
+        performSearch(currentQuery, currentPage + 1);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    });
+  }, 0);
+}
+
 function setupSearchBar() {
-  const input = document.getElementById("search-input");
-  const btn = document.getElementById("search-btn");
+  const input = document.getElementById("field-term");
+  const btn = document.getElementById("search-button");
   const form = document.getElementById("search-bar");
 
   form.addEventListener("submit", (e) => e.preventDefault());
+  btn.type = "button";
 
   /*if (!input || !btn) {
     console.warn("Elementos de busca não encontrados no HTML");

@@ -1,10 +1,31 @@
 const apiKey = "6c555263";
 const baseURL = "https://www.omdbapi.com/";
 
-export async function searchMovie(query) {
-  const response = await fetch(`${baseURL}?apikey=${apiKey}&s=${query}`);
-  if (!response.ok) throw new Error("Erro ao conectar à API OMDb");
-  return await response.json();
+export async function searchMovie(query, page = 1) {
+  const finalURL = `${baseURL}?apikey=${apiKey}&s=${encodeURIComponent(
+    query
+  )}&page=${page}`;
+  console.log("🔎 URL da busca:", finalURL);
+
+  const response = await fetch(finalURL);
+  /*const response = await fetch(
+    `${baseURL}?apikey=${apiKey}&s=${encodeURIComponent(query)}&page=${page}`
+  );*/
+  if (!response.ok) {
+    throw new Error("Erro ao conectar à API OMDb");
+  }
+
+  const data = await response.json();
+  if (data.Response === "False") {
+    return {
+      Response: "False",
+      Error: data.Error || "Nenhum resultado encontrado",
+      totalResults: 0,
+      Search: [],
+    };
+  }
+  return data;
+  /*return await response.json();*/
 }
 
 export async function getMovieDetails(imdbID) {
