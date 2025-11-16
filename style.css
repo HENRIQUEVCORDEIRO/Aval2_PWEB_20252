@@ -105,6 +105,22 @@ body {
   margin-bottom: 5px;
 }
 
+.nav-button{
+
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 19px;
+    border-radius: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family:  Poppins, Arial,sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s ease, background 0.2s ease;
+    margin-top: 10px;
+    text-decoration: none;
+
 #movie-synopsis-main {
   margin-top: 5px;
   /* background: var(--color-secondary-background); */
@@ -438,4 +454,188 @@ body {
 #search-button:hover {
   transform: scale(1.08);
   background: #333;
+}
+
+
+.btn-details {
+    display: inline-block;      /* isso aqui é para não virar largura total */
+    width: auto;                /* garante que NÃO estica */
+    align-self: flex-start;
+    
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: Poppins, Arial, sans-serif;
+    font-weight: 600;
+    transition: 0.2s ease;
+    cursor: pointer;
+
+    margin: 8px 0 8px 15px;
+}
+
+
+
+/* Hover */
+.btn-details:hover {
+    background: #6b6b6bdd;
+    transform: scale(1.05);
+}
+
+
+
+/* ===== DETALHES DO FILME ===== */
+
+#movie-details {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    background: white;
+    border-radius: var(--radius-size);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+    max-width: 900px;
+    margin: 40px auto;  /* centraliza na tela */
+}
+
+#movie-details header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Poppins, sans-serif;
+    margin-bottom: 10px;
+}
+
+/* sinopse */
+#movie-synopsis {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-secondary-text);
+    font-family: Poppins, sans-serif;
+    background: rgba(0,0,0,0.05);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* rating */
+#movie-rating {
+    background: black;
+    color: white;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+#rating-value-movie {
+    font-size: 22px;
+}
+
+
+#movie-details[hidden] {
+    display: none !important;
+}
+
+
+
+/* ===== TELA SOBRE ===== */
+
+#screen-about {
+    padding: 40px;
+    text-align: center;
+}
+
+#screen-about h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: Poppins, Arial, sans-serif;
+}
+
+/* Container dos cards */
+#cards-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+}
+
+/* Card individual */
+.card-member {
+    background: white;
+    border-radius: var(--radius-size);
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover */
+.card-member:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Ícone ou imagem */
+.card-member figure {
+    font-size: 50px;
+    margin-bottom: 12px;
+}
+
+/* Nome do integrante */
+.card-member h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Descrição */
+.card-member p {
+    font-size: 15px;
+    color: var(--color-secondary-text);
+    line-height: 1.4;
+}
+
+
+/*centralizar os cards*/
+
+#cards-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 20px 0;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+
+
+/* ========= RODAPÉ =========*/
+
+footer {
+    background: var(--color-main-text);      /* cor de fundo */
+    color: white;                            /* texto branco */
+    padding: 20px 40px;                      /* espaçamento confortável */
+    text-align: center;                      /* centraliza o texto */
+    margin-top: 40px;                        /* distância do conteúdo acima */
+    font-family: Poppins, Arial, sans-serif;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1); /* sombra sutil pra destacar */
+}
+
+
+footer p {
+    white-space: pre-line;
+    line-height: 1.8;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
 }
