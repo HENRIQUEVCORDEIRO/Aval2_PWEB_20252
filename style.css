@@ -448,6 +448,35 @@ body {
 }
 
 
+.btn-details {
+    display: inline-block;      /* isso aqui é para não virar largura total */
+    width: auto;                /* garante que NÃO estica */
+    align-self: flex-start;
+    
+    background: var(--color-main-text);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    text-decoration: none;
+    font-family: Poppins, Arial, sans-serif;
+    font-weight: 600;
+    transition: 0.2s ease;
+    cursor: pointer;
+
+    margin: 8px 0 8px 15px;
+}
+
+
+
+/* Hover */
+.btn-details:hover {
+    background: #6b6b6bdd;
+    transform: scale(1.05);
+}
+
+
+
 /* ===== DETALHES DO FILME ===== */
 
 #movie-details {
