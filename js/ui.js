@@ -1,6 +1,9 @@
-export function renderMovies(list) {
-  const container = document.getElementById("grid-filmes");
-  if (!container) console.warn("Elemento não encontrado!");
+export function renderMovies(list, targetId = "grid-filmes") {
+  const container = document.getElementById(targetId);
+  if (!container) {
+    console.warn("Elemento não encontrado: ", targetId);
+    return;
+  }
 
   container.innerHTML = list
     .map(
@@ -22,16 +25,16 @@ export function renderMovies(list) {
 const statusArea = document.getElementById("status-area");
 const listContainer = document.getElementById("grid-filmes");
 
-export function showError(message) {
-  statusArea.innerHTML = `<p class="error">${message}</p>`;
-  listContainer.innerHTML = "";
+export function showError(message, targetId = "grid-filmes") {
+  const container = document.getElementById(targetId);
+  if (container) container.innerHTML = `<p class="error">${message}</p>`;
   /*const container = document.getElementById("grid-filmes");
   container.innerHTML = `<p class="error">${message}</p>`;*/
 }
 
-export function showLoading() {
-  statusArea.innerHTML = "<p>Carregando...</p>";
-  listContainer.innerHTML = "";
+export function showLoading(targetId = "grid-filmes") {
+  const container = document.getElementById(targetId);
+  if (container) container.innerHTML = "<p>Carregando...</p>";
   /*const container = document.getElementById("grid-filmes");
   container.innerHTML = `<p>Carregando...</p>`;*/
 }
