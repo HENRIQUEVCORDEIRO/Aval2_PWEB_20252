@@ -28,13 +28,9 @@ const listContainer = document.getElementById("grid-filmes");
 export function showError(message, targetId = "grid-filmes") {
   const container = document.getElementById(targetId);
   if (container) container.innerHTML = `<p class="error">${message}</p>`;
-  /*const container = document.getElementById("grid-filmes");
-  container.innerHTML = `<p class="error">${message}</p>`;*/
 }
 
 export function showLoading(targetId = "grid-filmes") {
   const container = document.getElementById(targetId);
   if (container) container.innerHTML = `<div class="loader"></div>`;
-  /*const container = document.getElementById("grid-filmes");
-  container.innerHTML = `<p>Carregando...</p>`;*/
 }

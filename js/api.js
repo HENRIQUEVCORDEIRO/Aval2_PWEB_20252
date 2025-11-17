@@ -8,9 +8,6 @@ export async function searchMovie(query, page = 1) {
   console.log("🔎 URL da busca:", finalURL);
 
   const response = await fetch(finalURL);
-  /*const response = await fetch(
-    `${baseURL}?apikey=${apiKey}&s=${encodeURIComponent(query)}&page=${page}`
-  );*/
   if (!response.ok) {
     throw new Error("Erro ao conectar à API OMDb");
   }
@@ -25,7 +22,6 @@ export async function searchMovie(query, page = 1) {
     };
   }
   return data;
-  /*return await response.json();*/
 }
 
 export async function getMovieDetails(imdbID) {
@@ -36,5 +32,4 @@ export async function getMovieDetails(imdbID) {
   return await response.json();
 }
 
-/*import { searchMovie } from './js/api.js';
-searchMovie('casablanca').then(console.log);*/
+

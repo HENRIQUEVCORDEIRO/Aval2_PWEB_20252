@@ -120,10 +120,6 @@ function setupSearchBar() {
   form.addEventListener("submit", (e) => e.preventDefault());
   btn.type = "button";
 
-  /*if (!input || !btn) {
-    console.warn("Elementos de busca não encontrados no HTML");
-    return;
-  }*/
 
   btn.addEventListener("click", () => {
     const query = input.value.trim();
