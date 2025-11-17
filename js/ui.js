@@ -14,7 +14,7 @@ export function renderMovies(list, targetId = "grid-filmes") {
         }" alt="${movie.Title}">
         <h3 id="title">${movie.Title}</h3>
         <p id="release-date">${movie.Year}</p>
-        <button id="details" onclick="window.location.href='detalhes.html?id=${
+        <button class="btn-details" onclick="window.location.href='details.html?id=${
           movie.imdbID
         }'">Ver detalhes</button>
     </div>`

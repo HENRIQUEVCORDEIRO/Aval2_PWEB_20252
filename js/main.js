@@ -2,15 +2,15 @@ import { searchMovie, getMovieDetails } from "./api.js";
 import { renderMovies, showError, showLoading } from "./ui.js";
 
 const featuredIDs = [
-  "tt4154796" /*Vingadores Ultimato*/,
-  "tt0468569" /*Batman Cavaleiro das Trevas*/,
-  "tt1375666" /*A Origem*/,
-  "tt0133093" /*Matrix 1*/,
-  "tt0111161" /*Um Sonho de Liberdade*/,
-  "tt0034583" /*Casablanca*/,
-  "tt0081505" /*O Iluminado*/,
-  "tt0093058" /*Nascido Para Matar*/,
-  "tt0245429" /*A Viagem de Chihiro*/,
+  "tt4154796",
+  "tt0468569",
+  "tt1375666",
+  "tt0133093",
+  "tt0111161",
+  "tt0034583",
+  "tt0081505",
+  "tt0093058",
+  "tt0245429",
 ];
 
 let currentQuery = "";
@@ -18,6 +18,14 @@ let currentPage = 1;
 let totalResults = 0;
 
 const sectionTitle = document.getElementById("section-title");
+
+function $(id) {
+  return document.getElementById(id);
+}
+
+function isIndexPage() {
+  return Boolean($("grid-filmes") && $("section-title"));
+}
 
 async function loadFeaturedMovies() {
   showLoading("grid-filmes");
@@ -60,21 +68,6 @@ async function performSearch(query, page = 1) {
 
 function renderPagination() {
   let nav = document.querySelector("#sinopse nav");
-
-  if (!nav) {
-    console.warn("<nav> não encontrado. Criando automaticamente...");
-
-    const section = document.getElementById("sinopse");
-    if (!section) {
-      console.error("ERRO: <section id='sinopse'> NÃO existe no HTML.");
-      return;
-    }
-
-    nav = document.createElement("nav");
-    nav.setAttribute("aria-label", "Navegação de Página");
-    section.appendChild(nav);
-  }
-
   const totalPages = Math.ceil(totalResults / 10);
 
   nav.innerHTML = `
@@ -87,43 +80,21 @@ function renderPagination() {
     }>Próxima</button>
   `;
 
-  setTimeout(() => {
-    const prev = document.getElementById("btn-prev");
-    const next = document.getElementById("btn-next");
+  document.getElementById("btn-prev").addEventListener("click", () => {
+    if (currentPage > 1) performSearch(currentQuery, currentPage - 1);
+  });
 
-    if (!prev || !next) {
-      console.error("Botões de paginação não foram criados.");
-      return;
-    }
-
-    prev.addEventListener("click", () => {
-      if (currentPage > 1) {
-        performSearch(currentQuery, currentPage - 1);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
-
-    next.addEventListener("click", () => {
-      if (currentPage < totalPages) {
-        performSearch(currentQuery, currentPage + 1);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
-    });
-  }, 0);
+  document.getElementById("btn-next").addEventListener("click", () => {
+    if (currentPage < totalPages) performSearch(currentQuery, currentPage + 1);
+  });
 }
 
 function setupSearchBar() {
-  const input = document.getElementById("field-term");
-  const btn = document.getElementById("search-button");
+  const input = document.getElementById("search-input");
+  const btn = document.getElementById("search-btn");
   const form = document.getElementById("search-bar");
 
   form.addEventListener("submit", (e) => e.preventDefault());
-  btn.type = "button";
-
-  /*if (!input || !btn) {
-    console.warn("Elementos de busca não encontrados no HTML");
-    return;
-  }*/
 
   btn.addEventListener("click", () => {
     const query = input.value.trim();
@@ -139,17 +110,15 @@ function setupSearchBar() {
   });
 
   input.addEventListener("input", () => {
-    const query = input.value.trim();
-    if (query === "") {
-      loadFeaturedMovies();
-      return;
-    }
+    if (input.value.trim() === "") loadFeaturedMovies();
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadFeaturedMovies();
-  setupSearchBar();
+  if (isIndexPage()) {
+    loadFeaturedMovies();
+    setupSearchBar();
+  }
 });
 
 async function testSearch() {

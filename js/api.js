@@ -5,7 +5,7 @@ export async function searchMovie(query, page = 1) {
   const finalURL = `${baseURL}?apikey=${apiKey}&s=${encodeURIComponent(
     query
   )}&page=${page}`;
-  console.log("🔎 URL da busca:", finalURL);
+  console.log("URL da busca:", finalURL);
 
   const response = await fetch(finalURL);
   /*const response = await fetch(
