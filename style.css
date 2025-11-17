@@ -299,8 +299,8 @@ body {
 
 /* o card do modal */
 #error-modal > div {
-  background: white;
-  color: black;
+  background: var(--color-secondary-background);
+  color: var(--color-main-text);
   padding: 30px;
   width: 340px;
   border-radius: 14px;
@@ -323,7 +323,7 @@ body {
 /* parágrafos */
 #error-modal p {
   margin: 8px 0;
-  color: #333;
+  color: var(--color-secondary-text);
 }
 
 /* botão OK */
