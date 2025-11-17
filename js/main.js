@@ -90,8 +90,8 @@ function renderPagination() {
 }
 
 function setupSearchBar() {
-  const input = document.getElementById("search-input");
-  const btn = document.getElementById("search-btn");
+  const input = document.getElementById("field-term");
+  const btn = document.getElementById("search-button");
   const form = document.getElementById("search-bar");
 
   form.addEventListener("submit", (e) => e.preventDefault());
