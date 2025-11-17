@@ -1,12 +1,12 @@
 :root {
-  --color-primary-background: #ececec; /*#141414*/
-  --color-secondary-background: #a3a3a3; /*#333333*/
+  --color-primary-background: #141414; /*#ececec*/
+  --color-secondary-background: #333333; /*#a3a3a3*/
 
-  --color-main-text: #000000; /*#FFFFFF*/
-  --color-secondary-text: #3d3d3d; /*#AAAAAA*/
-  --border-color: #d4d4d4; /*#555555*/
+  --color-main-text: #FFFFFF; /*#000000*/
+  --color-secondary-text: #AAAAAA; /*#3d3d3d*/
+  --border-color: #555555; /*#d4d4d4*/
   --warn-color: #ffb86b;
-  --error-color: #e50914; /*#E50914*/
+  --error-color: #e50914;
   --radius-size: 14px;
 }
 
@@ -107,8 +107,8 @@ body {
 
 .nav-button{
 
-    background: var(--color-main-text);
-    color: white;
+    background: #000000;
+    color: var(--color-main-text);
     padding: 8px 19px;
     border-radius: 20px;
     font-size: 20px;
@@ -139,24 +139,10 @@ body {
   flex-wrap: wrap;
 }
 
-.nav-button {
-  background: var(--color-main-text);
-  color: white;
-  padding: 8px 19px;
-  border-radius: 20px;
-  font-size: 20px;
-  letter-spacing: 1px;
-  font-family: Poppins, Arial, sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: transform 0.15s ease, background 0.2s ease;
-  margin-top: 10px;
-}
-
 .nav-button:hover {
   transform: scale(1.05);
-  background: #6b6b6bdd;
+  background: var(--color-main-text);
+  color: var(--color-primary-background);
 }
 
 /* #listagem-destaques{
@@ -219,8 +205,8 @@ body {
 }
 
 .movie-card button {
-  background: var(--color-main-text);
-  color: white;
+  background: #000000;
+  color: var(--color-main-text);
   border-radius: 20px;
   padding: 5px 15px;
   font-size: 15px;
@@ -235,7 +221,8 @@ body {
 
 .movie-card button:hover {
   transform: scale(1.05);
-  background: #6b6b6bdd;
+  background: var(--color-main-text);
+  color: var(--color-primary-background);
 }
 
 .info-cards {
@@ -265,8 +252,8 @@ body {
 
 /* Botões */
 #sinopse nav button {
-  background: var(--color-main-text);
-  color: white;
+  background: #000000;
+  color: var(--color-main-text);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -276,13 +263,14 @@ body {
 /* Hover */
 #sinopse nav button:hover:not([disabled]) {
   transform: scale(1.06);
-  background: #6b6b6bdd; /* igual aos outros botões, consistente */
+  background: var(--color-main-text); /* igual aos outros botões, consistente */
+  color: var(--color-primary-background);
 }
 
 /* Botão atual (disabled) */
 #sinopse nav button[disabled] {
-  background: var(--color-secondary-background);
-  color: var(--color-secondary-text);
+  background: var(--color-main-text);
+  color: var(--color-primary-background);
   cursor: default;
   transform: none;
 }
@@ -365,7 +353,7 @@ body {
   position: absolute;
   top: 300px; /* y */
   left: 510px; /* x */
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--color-secondary-background);
   color: black;
   padding: 28px;
   border-radius: 14px;
@@ -415,7 +403,7 @@ body {
 #search-bar {
   display: flex;
   align-items: center;
-  background: white;
+  background: var(--color-secondary-background);
   padding: 8px 14px;
   border-radius: 14px;
   gap: 8px;
@@ -432,6 +420,7 @@ body {
 
 /* ===== INPUT ===== */
 #field-term {
+  color: var(--color-main-text);
   border: none;
   outline: none;
   font-size: 16px;
@@ -463,8 +452,8 @@ body {
     width: auto;                /* garante que NÃO estica */
     align-self: flex-start;
     
-    background: var(--color-main-text);
-    color: white;
+    background: #000000;
+    color: var(--color-primary-background);
     padding: 8px 14px;
     border-radius: 6px;
     font-size: 13px;
@@ -481,7 +470,8 @@ body {
 
 /* Hover */
 .btn-details:hover {
-    background: #6b6b6bdd;
+    background: var(--color-main-text);
+    color: var(--color-primary-background);
     transform: scale(1.05);
 }
 
@@ -496,7 +486,8 @@ body {
     flex-direction: column;
     gap: 30px;
 
-    background: white;
+    background: var(--color-secondary-background);
+    color: var(--color-main-text);
     border-radius: var(--radius-size);
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -506,6 +497,7 @@ body {
 }
 
 #movie-details header h1 {
+    color: var(--color-main-text);
     font-size: 32px;
     font-weight: 700;
     font-family: Poppins, sans-serif;
@@ -569,7 +561,7 @@ body {
 
 /* Card individual */
 .card-member {
-    background: white;
+    background: var(--color-secondary-background);
     border-radius: var(--radius-size);
     padding: 24px;
     text-align: center;
@@ -623,8 +615,8 @@ body {
 /* ========= RODAPÉ =========*/
 
 footer {
-    background: var(--color-main-text);      /* cor de fundo */
-    color: white;                            /* texto branco */
+    background: #000000;      /* cor de fundo */
+    color: var(--color-main-text);                            /* texto branco */
     padding: 20px 40px;                      /* espaçamento confortável */
     text-align: center;                      /* centraliza o texto */
     margin-top: 40px;                        /* distância do conteúdo acima */
