@@ -34,7 +34,7 @@ export function showError(message, targetId = "grid-filmes") {
 
 export function showLoading(targetId = "grid-filmes") {
   const container = document.getElementById(targetId);
-  if (container) container.innerHTML = "<p>Carregando...</p>";
+  if (container) container.innerHTML = `<div class="loader"></div>`;
   /*const container = document.getElementById("grid-filmes");
   container.innerHTML = `<p>Carregando...</p>`;*/
 }

@@ -96,11 +96,6 @@ body {
   position: relative;
 }
 
-#listing-featured .left-arrow,
-#listing-featured .right-arrow {
-  top: 50%; /* mais baixas */
-}
-
 #movie-title {
   margin-bottom: 5px;
 }
@@ -631,4 +626,47 @@ footer p {
     font-size: 16px;
     letter-spacing: 0.5px;
     opacity: 0.9;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 6px solid var(--border-color);
+  border-top: 6px solid var(--color-main-text);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: var(--error-color);
+  font-weight: 600;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+
+@media (min-width: 760px) and (max-width: 1024px) {
+  #listing-featured {
+    padding: 50px 100px;
+    margin: 20px 100px;
+    margin: 20px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: var(--radius-size);
+  }
+
+  #navigation-filters {
+    margin: 20px 100px;
+    justify-content: center;
+  }
 }
