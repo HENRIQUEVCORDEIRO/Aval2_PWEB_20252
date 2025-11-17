@@ -14,3 +14,6 @@
 - OMDb API
 
 ### Instruções de execução:
+
+- Abrir index.html
+- Usara a extensão Live Server
